@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -p -a | grep -E -v "/$" | tr '\n' ',' | sed 's/,$/\n/'
+ls -p -A | awk '{printf "%s%s,", $0, (/\/$/ ? "" : "/")}' |sed '/,$/\n/'
