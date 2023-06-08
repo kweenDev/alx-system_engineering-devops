@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -pd * | tr '\n' ',' | sed 's/,$/\n/'
+ls -p -a | awk '{0RS = NR%2 ? "," : "\n"} 1'
