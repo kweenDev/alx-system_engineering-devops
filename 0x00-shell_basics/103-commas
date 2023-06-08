@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -p -a -m -v | tr '\n' ','
+ls -pd * | tr '\n' ',' | sed 's/,$/\n/'
