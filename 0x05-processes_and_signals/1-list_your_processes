@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # This script lists currently running processes with process hierarchy
 
-echo "USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND"
-ps aux --forest
+ps auxf
