@@ -1,62 +1,37 @@
 #!/usr/bin/env bash
+# This script manages 'manage_my_process'
 
-# Function to display usage message
-usage() {
-    echo "Usage: $0 {start|stop|restart}"
-}
+#!/usr/bin/env bash
+# Manages 'manage_my_process'
 
-# Function to start the process
-start_process() {
-    if [ -f "/var/run/my_process.pid" ]; then
-        echo "Process already running with PID $(<"/var/run/my_process.pid")"
+if [ $# -gt 0 ]
+then
+    if [ "$1" == "start" ]
+    then
+	./manage_my_process &
+	touch /var/run/my_process.pid
+#	echo $(pgrep -f manage_my_process) > /var/run/my_process.pid
+	echo "$!" > /var/run/my_process.pid
+	echo "manage_my_process started"
+    elif [ "$1" == "stop" ]
+    then
+#	kill $(pgrep -f manage_my_process)
+	echo "manage_my_process stopped"
+	kill "$(cat /var/run/my_process.pid)"
+	rm -f /var/run/my_process.pid
+    elif [ "$1" == "restart" ]
+    then
+#	kill $(pgrep -f manage_my_process)
+	kill "$(cat /var/run/my_process.pid)"
+	rm -f /var/run/my_process.pid
+	./manage_my_process &
+#	echo $(pgrep -f manage_my_process) > /var/run/my_process.pid
+	touch /var/run/my_process.pid
+	echo "$!" > /var/run/my_process.pid
+	echo "manage_my_process restarted"
     else
-        echo $$ > /var/run/my_process.pid
-        echo "manage_my_process started"
-        while true; do
-            echo "I am alive!" >> /tmp/my_process
-            sleep 2
-        done
+	echo "Usage: manage_my_process {start|stop|restart}"
     fi
-}
-
-# Function to stop the process
-stop_process() {
-    if [ -f "/var/run/my_process.pid" ]; then
-        echo "manage_my_process stopped"
-        rm /var/run/my_process.pid
-    else
-        echo "Process is not running"
-    fi
-}
-
-# Function to restart the process
-restart_process() {
-    stop_process
-    start_process
-    echo "manage_my_process restarted"
-}
-
-# Check for valid arguments
-if [ $# -ne 1 ]; then
-    usage
-    exit 1
+else
+    echo "Usage: manage_my_process {start|stop|restart}"
 fi
-
-# Perform action based on the argument passed
-case "$1" in
-    start)
-        start_process
-        ;;
-    stop)
-        stop_process
-        ;;
-    restart)
-        restart_process
-        ;;
-    *)
-        usage
-        exit 1
-        ;;
-esac
-
-exit 0
