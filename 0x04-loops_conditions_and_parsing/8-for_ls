@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory in a list format,
+# showing only the part of the name after the first dash
+
+# Loop through each item in the directory (excluding hidden files)
+for item in *; do
+    if [ -f "$item" ]; then  # Check if it's a file
+        # Extract the part of the name after the first dash
+        name=$(echo "$item" | cut -d '-' -f 2-)
+        echo "$name"
+    fi
+done
