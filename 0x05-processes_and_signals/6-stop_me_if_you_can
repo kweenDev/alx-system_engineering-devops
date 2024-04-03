@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-# This script stops the 4-to_infinity_and_beyond process without using kill or killall
+# This script stops the 4-to_infinity_and_beyond process
+# Requirement: You cannot use kill or killall
 
-# Get the PID of the process
-pid=$(ps -eo pid,cmd | grep -w "4-to_infinity_and_beyond" | grep -v grep | awk '{print $1}')
-
-# Send SIGTERM signal to the process
-kill -SIGTERM $pid
+pkill -f 4-to_infinity_and_beyond
