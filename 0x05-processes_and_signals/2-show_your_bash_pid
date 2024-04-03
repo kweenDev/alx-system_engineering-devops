@@ -4,9 +4,6 @@
 # shellcheck disable=SC2009
 # SC2009 is disabled to allow using ps command in backticks
 
-# Get the lines containing the word "bash" from ps output
-ps_output=$(ps aux | grep bash)
+# Get the lines containing the word "bash"
 
-# Extract and display the PID of your Bash process
-bash_pid=$(echo "$ps_output" | grep -v grep | grep bash | awk '{print $2}')
-echo "Here we can see that my Bash PID is $bash_pid."
+ps auxf | grep bash
