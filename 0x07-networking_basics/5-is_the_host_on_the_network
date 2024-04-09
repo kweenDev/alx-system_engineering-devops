@@ -3,9 +3,16 @@
 
 # Check if an argument is provided
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 {IP_ADDRESS}"
-    exit 1
+	echo "Usage: $0 {IP_ADDRESS}"
+	exit 1
 fi
 
 # Ping the provided IP address 5 times
-ping -c 5 "$1"
+ping_result=$(ping -c 5 "$1")
+
+# Display ping results
+echo "$ping_result"
+
+# Extract and display round-trip time statistics
+rtt_statistics=$(echo "$ping_result" | grep "rtt min/avg/max/mdev")
+echo "$rtt_statistics"
