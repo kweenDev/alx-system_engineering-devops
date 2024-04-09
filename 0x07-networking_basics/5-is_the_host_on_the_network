@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
-# This script pings an IP address passed as an argument and displays the round-trip time.
+# This script pings an IP address 5 times.
 
-# Check if an argument is provided
-if [ $# -eq 0 ]; then
+if [ "$#" -ne 1 ]; then
 	echo "Usage: $0 {IP_ADDRESS}"
-	exit 1
+else
+	ping -c 5 "$1"
 fi
-
-# Ping the provided IP address 5 times
-ping_result=$(ping -c 5 "$1")
-
-# Display ping results
-echo "$ping_result"
-
-# Extract and display round-trip time statistics
-rtt_statistics=$(echo "$ping_result" | grep "rtt min/avg/max/mdev")
-echo "$rtt_statistics"
