@@ -7,22 +7,22 @@
 sudo apt-get -y update
 apt-get -y install haproxy
 
-# edit config file
-server_config=\
-"
-frontend  ehoneah-frontend
-        bind *:80
+# Configure HAproxy
+echo 'frontend http_front
+	bind *:80
         mode http
-        default_backend ehoneah-backend
-backend ehoneah-backend
+        default_backend http_back
+
+	backend http-back
+	mode http
         balance roundrobin
         server 425092-web-01 54.87.241.56:80 check
         server 425092-web-02 18.209.180.120:80 check
-"
-echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+' > /etc/haproxy/haproxy.cfg
 
-# enable haproxy to be started by init script
+# Enable HAproxy init script
 
-echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
 
-sudo service haproxy restart
+# Restart HAproxy to apply changes
+service haproxy restart
