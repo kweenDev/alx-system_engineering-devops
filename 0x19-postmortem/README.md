@@ -58,11 +58,11 @@ The script was terminated, and the database was gently rolled back to a stable s
 	- Enhance monitoring to detect similar issues quicker. Our monitoring tools will now wear superhero capes.
 	- Schedule regular training for engineers on incident response protocols. Because even databases need therapy sometimes.
 
-![Database Needs Care](./database_therapy_session)
+![Database Needs Care](./database_therapy_session.jpeg)
 
 ## Conclusion
 And there you have it-the epic saga of the Great Database Lockout!
 Remember, fellow engineers, databases are sensitive souls; treat them kindly, and they'll keep your data safe.
 Now go forth, share this tale, and prevent others from making the same mistakes.
 
-![Debugging Success](./debugging_success)
+![Debugging Success](./debugging_success.jpeg)
