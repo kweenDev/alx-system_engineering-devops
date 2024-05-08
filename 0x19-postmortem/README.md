@@ -22,7 +22,7 @@ Users were left staring at loading spinners, contemplating life's mysteries, and
 
 Approximately **75%** of users experienced timeouts, while the remaining 25% were blissfully unaware because they were busy petting their cats (_meow!_).
 
-![The Blissfully Unaware](./25%_cats.jpeg)
+![The Blissfully Unaware](./https://github.com/kweenDev/alx-system_engineering-devops/tree/master/0x19-postmortem/25%_cats.jpeg)
 
 ### Root Cause
 The database, feeling misunderstood and slightly melodramatic, locked itself in a digital panic room. It muttered, "I'm not angry; I'm just disappointed."
