@@ -44,7 +44,8 @@ def display_employee_progress(user_data, todos_data):
     total_tasks = len(todos_data)
     done_tasks = [task for task in todos_data if task["completed"]]
 
-    print(f"Employee {employee_name} is done with tasks({len(done_tasks)} / {total_tasks}): ")
+    print(f"Employee {employee_name} is done with tasks({len(done_tasks)} /
+                                                        {total_tasks}): ")
     for task in done_tasks:
         print(f"\t{task['title']}")
 
