@@ -9,24 +9,26 @@ import requests
 import sys
 
 
-if __name__ == '__main__':
-    employeeId = sys.argv[1]
+if __name__ == "__main__":
     baseUrl = "https://jsonplaceholder.typicode.com/users"
-    url = baseUrl + "/" + employeeId
+    allUsers = requests.get(baseUrl).json()
 
-    response = requests.get(url)
-    username = response.json().get('username')
+    allTasks = {}
+    for user in allUsers:
+        employeeId = str(user["id"])
+        username = user["username"]
+        todoUrl = f"{baseUrl}/{employeeId}/todos"
+        tasks = requests.get(todoUrl).json()
 
-    todoUrl = url + "/todos"
-    response = requests.get(todoUrl)
-    tasks = response.json()
+        userTasks = []
+        for task in tasks:
+            userTasks.append({
+                "username": username,
+                "task": task["title"],
+                "completed": task["completed"]
+            })
 
-    dictionary = {employeeId: []}
-    for task in tasks:
-        dictionary[employeeId].append({
-            "task": task.get('title'),
-            "completed": task.get('completed'),
-            "username": username
-        })
-    with open('{}.json'.format(employeeId), 'w') as filename:
-        json.dump(dictionary, filename)
+        allTasks[employeeId] = userTasks
+
+    with open("todo_all_employees.json", "w") as outfile:
+        json.dump(allTasks, outfile)
