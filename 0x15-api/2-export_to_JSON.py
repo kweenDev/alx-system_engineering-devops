@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Exports TODO list information for a given employee ID to JSON format"""
 
-import sys
-import requests
 import json
+import requests
+import sys
 
 
 def get_employee_info(employee_id):
