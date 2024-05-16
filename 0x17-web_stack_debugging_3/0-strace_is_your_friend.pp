@@ -11,9 +11,9 @@ package { 'puppetlabs-stdlib':
 
 # Replace the line containing "phpp" with "php"
 file_line { 'replace_line_in_wp_settings':
+  ensure  => present,               # Ensure is the first attribute
   path    => $file_to_edit,
   line    => 'new_line_to_insert',  # Replace this with the actual line you want to insert
   match   => '^.*phpp.*$',         # Regular expression to match the line containing "phpp"
-  ensure  => present,
   require => File[$file_to_edit],  # Ensure the file exists before modifying it
 }
