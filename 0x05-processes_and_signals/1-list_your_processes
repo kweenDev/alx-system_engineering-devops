@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# This script lists currently running processes with process hierarchy
-
-ps auxf
