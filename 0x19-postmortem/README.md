@@ -3,6 +3,7 @@
 ![The Software Engineering Department](./software_engineering_department.jpeg)
 
 ## Introduction
+
 In the mystical realm of servers and databases, where bits and bytes dance to the rhythm of uptime, a fateful event unfolded.
 Brace yourselves for "The Great Database Lockout of '24."
 
@@ -11,10 +12,12 @@ Brace yourselves for "The Great Database Lockout of '24."
 ## Issue Summary
 
 ### Duration
-From **14:00 to 16:30 SAST** on **May 8, 2024**
+
+From **14:00 to 16:30 SAST** on **August 12, 2024**
 (or as we like to call it, the "Dark Ages of Data").
 
 ### Impact
+
 Our beloved website decided to take a spontaneous vacation.
 Users were left staring at loading spinners, contemplating life's mysteries, and wondering if they should switch to using the ravens from _Game of Thrones_ for communication.
 
@@ -25,10 +28,12 @@ Approximately **75%** of users experienced timeouts, while the remaining 25% wer
 ![The Blissfully Unaware](./blissfully_unaware.jpeg)
 
 ### Root Cause
+
 The database, feeling misunderstood and slightly melodramatic, locked itself in a digital panic room. It muttered, "I'm not angry; I'm just disappointed."
 Turns out, it had a flair for theatrics.
 
 ## Timeline
+
 1. **14:00 :** Our automated monitoring tools woke up from their nap, and shouted, "Houston, we have a problem!" The on-call engineer, still half-asleep, stumbled over to the keyboard.
 2. **14:05 :** The engineer squinted at the screen, suspecting a network hiccup. But no, the network was sipping its coffee and minding its own business.
 
@@ -47,20 +52,24 @@ Turns out, it had a flair for theatrics.
 ## Root Cause and Resolution
 
 ### Detailed Cause
+
 The update script contained an incorrect SQL command. The database, feeling misunderstood, locked itself in protest. It muttered, "I'm not angry; I'm just misunderstood."
 
 ### Resolution Steps
+
 The script was terminated, and the database was gently rolled back to a stable state using a recent backup. The database management team whispered sweet SQL queries to soothe its wounded pride.
 
 ## Corrective and Preventative Measures
+
 1. **Improvements:**
-	- Implement stricter code review processes for database scripts. No more rogue SQL adventurers!
-	- Enhance monitoring to detect similar issues quicker. Our monitoring tools will now wear superhero capes.
-	- Schedule regular training for engineers on incident response protocols. Because even databases need therapy sometimes.
+   - Implement stricter code review processes for database scripts. No more rogue SQL adventurers!
+   - Enhance monitoring to detect similar issues quicker. Our monitoring tools will now wear superhero capes.
+   - Schedule regular training for engineers on incident response protocols. Because even databases need therapy sometimes.
 
 ![Database Needs Care](./database_therapy_session.jpeg)
 
 ## Conclusion
+
 And there you have it-the epic saga of the Great Database Lockout!
 Remember, fellow engineers, databases are sensitive souls; treat them kindly, and they'll keep your data safe.
 Now go forth, share this tale, and prevent others from making the same mistakes.
