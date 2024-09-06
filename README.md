@@ -1,55 +1,52 @@
-# System Engineering and DevOps - Bash, Scripting, Web Stack/Web Stack Debugging, Networking & Security, CI/CD
+# API advanced
 
-This repository contains programs written for the system engineering and DevOps
-stream at ALX Africa. In these projects, I worked with Bash and practiced
-writing Bash scripts to automate tasks. I have learnt about the OSI model and
-various Linux networking tools. Furthermore, I have configured a distributed system -
-two web servers and one load balancer - for deployment of my AirBnB project
-using Nginx, HAProxy, certbot, ufw, and MySQL. The specific list of projects
-contained are as follows:
+## Project Overview
 
-* [0x00. Shell, basics](./0x00-shell_basics)
-* [0x01. Shell, permissions](./0x01-shell_permissions)
-* [0x02. Shell, I/O Redirections and filters](./0x02-shell_redirections)
-* [0x03. Shell, init files, variables and expansions](./0x03-shell_variables_expansions)
-* [0x04. Loops, conditions and parsing](./0x04-loops_conditions_and_parsing)
-* [0x05. Processes and signals](./0x05-processes_and_signals)
-* [0x06. Regular expression](./0x06-regular_expressions)
-* [0x07. Networking basics #0](./0x07-networking_basics)
-* [0x08. Networking basics #1](./0x08-networking_basics_2)
-* [0x09. Web infrastructure design](./0x09-web_infrastructure_design)
-* [0x0A. SSH](./0x0A-ssh)
-* [0x0B. Web server](./0x0B-web_server)
-* [0x0C. Web stack debugging #0](./0x0C-web_stack_debugging_0)
-* [0x0D. Configuration management](./0x0D-configuration_management)
-* [0x0E. Web stack debugging #1](./0x0E-web_stack_debugging_1)
-* [0x10. HTTPS SSL](./0x10-https_ssl)
-* [0x11. What happens when you type google.com in your browser and press Enter](./0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter)
-* [0x12. Web stack debugging #2](./0x12-web_stack_debugging_2)
-* [0x13. Firewall](./0x13-firewall)
-* [0x14. Mysql](./0x14-mysql)
-* [0x15. API](./0x15-api)
-* [0x16. API advanced](./0x16-api_advanced)
-* [0x17. Web stack debugging #3](./0x17-web_stack_debugging_3)
-* [0x18. Webstack monitoring](./0x18-webstack_monitoring)
-* [0x19. Postmortem](./0x19-postmortem)
-* [0x1A. Application server](./0x1A-application_server)
-* [0x1B. Web stack debugging #4](./0x1B-web_stack_debugging_4)
+This project is part of the **ALX Software Engineering** program and focuses on making advanced API calls using Python. It interacts with the **Reddit API** to perform various tasks, such as retrieving the number of subscribers, printing the top 10 hot posts, and handling pagination using recursion. By working on this project, you will improve your ability to interact with APIs, parse JSON, and handle advanced recursive functions.
 
-## Author :black_nib:
+## Tests :heavy_check_mark:
 
-* __Refiloe Radebe__ <[kweenDev](https://github.com/kweenDev)>
+- [tests](./tests): Folder of test files for all tasks. Provided by Holberton
+  School.
 
-## Acknowledgements :pray:
+## Function Prototypes :floppy_disk:
 
-All work contained in this project was completed as part of the curriculum for
-ALX Africa. ALX Africa is an online-based, full-stack software
-engineering program that prepares students for careers in the tech industry
-using project-based peer learning. For more information, visit
-[this link](https://www.alxafrica.com/).
+Prototypes for functions written in this project:
 
-<p align="center">
-  <img src="https://www.alxafrica.com/wp-content/uploads/2023/12/logo-black.svg"
-       alt="ALX Africa logo"
-  >
-</p>
+| File           | Prototype                               |
+| -------------- | --------------------------------------- |
+| `0-subs.py`    | `def number_of_subscribers(subreddit)`  |
+| `1-top_ten.py` | `def top_ten(subreddit)`                |
+| `2-recurse.py` | `def recurse(subreddit, hot_list=[])`   |
+| `100-count.py` | `def count_words(subreddit, word_list)` |
+
+## Tasks :page_with_curl:
+
+- **0. How many subs?**
+
+  - [0-subs.py](./0-subs.py): Python function that returns the total number of
+    subscribers for a given subreddit.
+  - Returns `0` if an invalid subreddit is given.
+
+- **1. Top Ten**
+
+  - [1-top_ten.py](./1-top_ten.py): Python function that prints the top ten
+    hottest posts for a given subreddit.
+  - Prints `None` if an invalid subreddit is given.
+
+- **2. Recurse it!**
+
+  - [2-recurse.py](./2-recurse.py): Python function that recursively returns a
+    list of titles for all hot articles on a given subreddit.
+  - Returns `None` if no results are found on the given subreddit.
+
+- **3. Count it!**
+  - [100-count.py](./100-count.py): Python function that recursively prints a
+    sorted count of given keywords parsed from titles of all hot articles on a given
+    subreddit.
+  - Keywords are case-insensitive and delimited by spaces.
+  - Results are printed in descending order by count.
+  - Words with identical counts are sorted alphabetically.
+  - Words with no matches are skipped.
+  - Results are based on the number of times a keyword appears - ie.,
+    `java java java` counts as three separate instances of `java`.
