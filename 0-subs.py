@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 """
-Module to query the Reddit API and return the number of subscribers for
-a given subreddit.
+0-subs.py
+Author: Refiloe Radebe
+Date: 2024-09-06
+Description:
+    This script contains a function to query the Reddit API and return
+    the number of subscribers for a given subreddit.
 """
 
 import requests
@@ -9,31 +13,24 @@ import requests
 
 def number_of_subscribers(subreddit):
     """
-    Query the Reddit API and return the number of subscribers for
-    a given subreddit.
+    Queries the Reddit API and returns the number of subscribers for a given subreddit.
 
     Args:
-        subreddit (str): The subreddit name to query.
+        subreddit (str): The subreddit to query.
 
     Returns:
-        int: Number of subscribers for the subreddit.
-        Returns 0 if subreddit is invalid.
+        int: The number of subscribers if valid, 0 otherwise.
     """
+    # Define the URL and headers (including a custom User-Agent to avoid blocking)
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
-    headers = {"User-Agent": "linux:0x16.api.advanced:v1.0.0 (by/u/RegalRee"}
+    headers = {"User-Agent": "MyRedditBot/0.1"}
 
-    response = requests.get(url, headers=headers)
+    # Make the request
+    response = requests.get(url, headers=headers, allow_redirects=False)
+
+    # Check if the status code is 200 (OK)
     if response.status_code == 200:
         data = response.json()
-        subscribers = data['data']['subscribers']
-        return subscribers
+        return data.get("data", {}).get("subscribers", 0)
     else:
         return 0
-
-
-if __name__ == '__main__':
-    # Example usage
-    subreddit_name = input("Enter the subreddit name: ")
-    print(
-        f"Number of subscribers in r/{subreddit_name}:
-        {number_of_subscribers(subreddit_name)}")
