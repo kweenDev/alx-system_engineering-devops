@@ -1,37 +1,56 @@
-# Reddit API Project
-## 0x16. API advanced
+# System Engineering and DevOps - Bash, Scripting, Web Stack/Web Stack Debugging, Networking & Security, CI/CD
 
-## Description
-This project consists of Python scripts that interact with the Reddit API to perform various tasks such as querying the number of subscribers for a subreddit, retrieving the titles of hot posts, counting occurrences of keywords in hot articles, and more.
+This repository contains programs written for the system engineering and DevOps
+stream at ALX Africa. In these projects, I worked with Bash and practiced
+writing Bash scripts to automate tasks. I have learnt about the OSI model and
+various Linux networking tools. Furthermore, I have configured a distributed system -
+two web servers and one load balancer - for deployment of my AirBnB project
+using Nginx, HAProxy, certbot, ufw, and MySQL. The specific list of projects
+contained are as follows:
 
-## Getting Started
-To run these scripts, make sure you have Python 3 installed along with the requests library. You can install the library using the following command:
-```bash
-pip3 install requests
-```
+* [0x00. Shell, basics](./0x00-shell_basics)
+* [0x01. Shell, permissions](./0x01-shell_permissions)
+* [0x02. Shell, I/O Redirections and filters](./0x02-shell_redirections)
+* [0x03. Shell, init files, variables and expansions](./0x03-shell_variables_expansions)
+* [0x04. Loops, conditions and parsing](./0x04-loops_conditions_and_parsing)
+* [0x05. Processes and signals](./0x05-processes_and_signals)
+* [0x06. Regular expression](./0x06-regular_expressions)
+* [0x07. Networking basics #0](./0x07-networking_basics)
+* [0x08. Networking basics #1](./0x08-networking_basics_2)
+* [0x09. Web infrastructure design](./0x09-web_infrastructure_design)
+* [0x0A. SSH](./0x0A-ssh)
+* [0x0B. Web server](./0x0B-web_server)
+* [0x0C. Web stack debugging #0](./0x0C-web_stack_debugging_0)
+* [0x0D. Configuration management](./0x0D-configuration_management)
+* [0x0E. Web stack debugging #1](./0x0E-web_stack_debugging_1)
+* [0x10. HTTPS SSL](./0x10-https_ssl)
+* [0x11. What happens when you type google.com in your browser and press Enter](./0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter)
+* [0x12. Web stack debugging #2](./0x12-web_stack_debugging_2)
+* [0x13. Firewall](./0x13-firewall)
+* [0x14. Mysql](./0x14-mysql)
+* [0x15. API](./0x15-api)
+* [0x16. API advanced](./0x16-api_advanced)
+* [0x17. Web stack debugging #3](./0x17-web_stack_debugging_3)
+* [0x18. Webstack monitoring](./0x18-webstack_monitoring)
+* [0x19. Postmortem](./0x19-postmortem)
+* [0x1A. Application server](./0x1A-application_server)
+* [0x1B. Web stack debugging #4](./0x1B-web_stack_debugging_4)
 
-## Usage
-1. **Number of Subscribers**
-    - Script: `0-subs.py`
-    - Usage: `python3 0-main.py [subreddit]`
+## Author :black_nib:
 
-2. **Top Ten Hot Posts**
-    - Script: `1-top_ten.py`
-    - Usage: `python3 1-main.py [subreddit]`
+* __Refiloe Radebe__ <[kweenDev](https://github.com/kweenDev)>
 
-3. **Recurse Hot Articles**
-    - Script: `2-recurse.py`
-    - Usage: `python3 2-main.py [subreddit]`
+## Acknowledgements :pray:
 
-4. **Count Keywords**
-    - Script: `100-count.py`
-    - Usage: `python3 100-main.py [subreddit] [keyword_list]`
+All work contained in this project was completed as part of the curriculum for
+ALX Africa. ALX Africa is an online-based, full-stack software
+engineering program that prepares students for careers in the tech industry
+using project-based peer learning. For more information, visit
+[this link](https://www.alxafrica.com/).
 
-## Files
-- `0-subs.py`: Script to query the number of subscribers for a subreddit.
-- `1-top_ten.py`: Script to retrieve the titles of the top ten hot posts for a subreddit.
-- `2-recurse.py`: Script to recursively fetch all hot articles for a subreddit.
-- `100-count.py`: Script to count occurrences of keywords in hot articles for a subreddit.
-
-## Author
-[Refiloe Radebe](https://github.com/kweenDev)
+<p align="center">
+  <img src="https://www.alxafrica.com/wp-content/uploads/2023/12/logo-black.svg"
+       alt="ALX Africa logo"
+  >
+</p>
+>>>>>>> cadcc6d0a98e270d0618489c5c280c9e1fa9543a
