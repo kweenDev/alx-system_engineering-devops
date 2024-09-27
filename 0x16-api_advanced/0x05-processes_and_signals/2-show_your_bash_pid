@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script extracts and displays the PID of your Bash process
+
+# shellcheck disable=SC2009
+# SC2009 is disabled to allow using ps command in backticks
+
+# Get the lines containing the word "bash"
+
+ps auxf | grep bash
